@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "Liviu Cocianu",
+  "license": "MIT",
+  "homepage": "https://idoomful.github.io/portfolio-2020",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}
