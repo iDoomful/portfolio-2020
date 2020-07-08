@@ -5,7 +5,27 @@ var movementInPerc = 40;
 
 var $ = require("jquery");
 
-$(document).ready(function () {
+function scrollIfNeeded(element, container) {
+	if (element.offsetTop < container.scrollTop) {
+		container.scrollTop = element.offsetTop;
+	} else {
+		const offsetBottom = element.offsetTop + element.offsetHeight;
+		const scrollBottom = container.scrollTop + container.offsetHeight;
+		if (offsetBottom > scrollBottom) {
+			container.scrollTop = offsetBottom - container.offsetHeight;
+		}
+	}
+}
+
+$(document).ready(function() {
+	$("#vanilla-link").click(function() {
+		scrollIfNeeded($("#vanilla").get(0), $("#thumbnails").get(0));
+	});
+
+	$("#react-link").click(function() {
+		scrollIfNeeded($("#react").get(0), $("#thumbnails").get(0));
+	});
+
     // Set it open by default
     $("#title-container").css({
         transform: `translateY(-${movementInPerc}%)`
